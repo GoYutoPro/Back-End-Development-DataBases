@@ -1,8 +1,8 @@
 <?php
-define("DB_NAME", "Block 2");
-define ("DB_USER", "root");
+define("DB_NAME", "Block_2");
+define ("DB_USER", "admin");
 define ("DB_HOST", "localhost");
-define ("DB_PASSWORD", "");
+define ("DB_PASSWORD", "password");
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
@@ -21,7 +21,7 @@ die('Can\'t use'. DB_NAME. ':'.mysqli_error($connection));
 $name = $_POST ["name"];
 $email = $_POST ["email"];
 
-$sql = "INSERT INTO form_demo(name, email) VALUES ('$name', '$email')";
+$sql = "INSERT INTO astronaut (name, email) VALUES ('$name', '$email')";
 
 if(!mysqli_query($connection, $sql)){
 die("Error:".mysqli_error($connection));
