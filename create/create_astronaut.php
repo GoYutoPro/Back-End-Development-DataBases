@@ -1,11 +1,11 @@
 <html>
 <body>
-    <form action="Connection.php" method="post">
-        astronaut_id: <input type="integer" name="Astronaut_id">
+    <form action="../Connection.php" method="post">
+        astronaut_id: <input type="integer" name="astronaut_id">
 
-        name: <input type="text" name="Name">
+        name: <input type="text" name="name">
 
-        no_missions <input type="integer" name="No_Missions">
+        no_missions <input type="integer" name="no_missions">
 
         <input type="submit">
     
