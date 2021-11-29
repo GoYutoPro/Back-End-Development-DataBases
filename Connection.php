@@ -2,7 +2,7 @@
 define("DB_NAME", "Block_2");
 define ("DB_USER", "admin");
 define ("DB_HOST", "localhost");
-define ("DB_PASSWORD", "");
+define ("DB_PASSWORD", "password");
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
