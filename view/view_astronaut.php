@@ -45,7 +45,10 @@ while($row = $result->fetch_assoc()) {
 echo "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
 . $row["no_missions"]. "</td></tr>";
 }
-echo "</table>";
+echo $astronaut_id = $_POST['Astronaut_ID'];
+echo $name = $_POST['name'];
+echo $no_missions = $_POST['Number of Missions']
+
 } else { echo "0 results"; }
 $conn->close();
 ?>
