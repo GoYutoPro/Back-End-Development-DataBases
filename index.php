@@ -33,6 +33,7 @@ button {
 .divide {
     margin-bottom: 40px;
 }
+
 </style>
 
 
@@ -44,7 +45,7 @@ button {
         <a href="create/create_astronaut.php">
             <button>Create Entry to Astronaut Table</button>
         </a>
-    <a class="view" href="view_astronaut.php">
+    <a class="view" href="view/view_astronaut.php">
         <button>View Astronaut Table</button>
     </a>
     </div>

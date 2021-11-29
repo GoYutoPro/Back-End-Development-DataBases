@@ -7,7 +7,7 @@ define ("DB_PASSWORD", "password");
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
 if (!$connection) {
-    die('Could not connect:' .mysqli_error($connection));
+    die('Could not connect:'.mysqli_error($connection));
 }
 
 $db_selected = mysqli_select_db($connection, DB_NAME);

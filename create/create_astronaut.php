@@ -34,6 +34,7 @@
    </button></a>
 
    <?php
+   
     $astronaut_id = Validation($_POST ["astronaut_id"]);
     $name = Validation($_POST ["name"]);
     $no_missions = Validation($_POST ["no_missions"]);
@@ -61,6 +62,7 @@
         margin-top: 50px;
         width: 200px;
         height: 75px;
+        border-radius: 30px;
     }
 
     .submit {
