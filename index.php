@@ -25,12 +25,13 @@ button {
     transform: translate(50%,50%); 
     margin: 5px 0; 
     padding: 5px;
+    border-radius:20px;
 }
 .view {
     margin-bottom:20px;
 }
 .divide {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 </style>
 
@@ -38,6 +39,7 @@ button {
 </head>
 <marquee behavior="scroll" direction="right" scrollamount="15">Feel Free to CREATE adn VIEW tables in databases</marquee>
 <body>
+    <h3>Astronaut Table</h3>
 <div class="divide">
         <a href="create/create_astronaut.php">
             <button>Create Entry to Astronaut Table</button>
@@ -46,6 +48,7 @@ button {
         <button>View Astronaut Table</button>
     </a>
     </div>
+    <h3>Missions Table</h3>
     <div class="divide">
     <a href="create/create_mission.php">
     <button>Create Entry to Missions Table</button>
@@ -54,6 +57,7 @@ button {
     <button>View Missions Table</button>
     </a>
 </div>
+<h3>Attends Table</h3>
 <div class="divide">
     <a href="create/create_attend.php">
     <button>Create Entry to Attends Table</button>
@@ -62,6 +66,7 @@ button {
     <button>View Attends Table</button>
     </a>
 </div>
+<h3>Targets Table</h3>
 <div class="divide">
     <a href="create/create_target.php">
     <button>Create Entry to Targets Table</button>
