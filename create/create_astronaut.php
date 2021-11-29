@@ -1,12 +1,13 @@
 <html>
 <body>
     <table class="table"border="2px">
-    <td><form action="../Connection.php" method="post">
-        astronaut_id: <input type="integer" name="astronaut_id">
+    
+    <td><form name="FormValidator" onsubmit="return ValidateForm()" action="../Connection.php" method="post">
+        Astronaut id: <input type="number" name="astronaut_id">
 
-        name: <input type="text" name="name">
+        Astronaut Name: <input type="text" name="name" required>
 
-        no_missions <input type="integer" name="no_missions">
+        Number of Missions <input type="number" name="no_missions" required>
     <td>
         <input class="submit"type="submit">
     </td>
@@ -18,7 +19,7 @@
 </html>
 <style>
     .table {
-        margin-left: 200px;
+        margin-left: 190px;
         margin-top: 250px;
         background-color: lightblue;
     }
