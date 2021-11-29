@@ -58,6 +58,7 @@
         margin-top: 30px;
         width: 200px;
         height: 75px;
+        border-radius: 30px;
     }
 
     .submit {
