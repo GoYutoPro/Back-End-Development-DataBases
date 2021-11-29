@@ -10,12 +10,12 @@ if (!$connection) {
     die('Could not connect:' .mysqli_error($connection));
 }
 
-$db_selected = mysqli_select_db($connection, DB_NAME)
+$db_selected = mysqli_select_db($connection, DB_NAME);
 
 
-// if (!$db_selected){
-// die('Can\'t use'. DB_NAME. ':'.mysqli_error($connection));
-// }
+if (!$db_selected){
+die('Can\'t use'. DB_NAME. ':'.mysqli_error($connection));
+}
 
 $astronaut_id = $_POST ["astronaut_id"];
 $name = $_POST ["name"];
