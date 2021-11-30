@@ -3,10 +3,17 @@
 <?php
 echo "Hello";
 include '../Connection.php';
-
 $sql = "SELECT * FROM astronaut";
-$result = mysqli_query($connection,$sql); 
-echo $result;
+if(!mysqli_query($connection, $sql)){
+    die("Error:".mysqli_error($connection));
+    }
+
+else{
+    echo "It worked";
+}
+
+// $result = mysqli_query($connection,$sql); 
+// echo $result;
 
 
 // if ($result->num_rows > 0) {
