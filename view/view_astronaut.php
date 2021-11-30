@@ -21,8 +21,8 @@ if ($result) {
         // print($row[0]);
         // print($row[1]);
         // print($row[2]);
-        print "<tr><td>" . $row["0"]. "</td><td>" . $row["1"] . "</td><td>"
-. $row["2"]. "</td></tr>";
+        print "<td><td>" . $row["0"]. "</td><td>" . $row["1"] . "</td><td>"
+. $row["2"]. "</td></td>";
     }
 }
 
