@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <?php
-echo "Hello";
 include '../Connection.php';
 
-$result = mysqli_query($connection, "SELECT * FROM astronaut");
+$sql = "SELECT * FROM astronaut";
+$result = mysqli_query($connection,$sql);
 print_r($result);
+if ($result) {
+    while ($row = mysqli_fetch_row($result)) {
+        print($row[0]);
+        print($row[1]);
+    }
+}
 
 // if(!mysqli_query($connection, $sql)){
 //     die("Error:".mysqli_error($connection));
