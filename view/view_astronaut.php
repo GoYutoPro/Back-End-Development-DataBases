@@ -3,16 +3,18 @@
 <?php
 echo "Hello";
 include '../Connection.php';
-$sql = "SELECT * FROM astronaut";
-if(!mysqli_query($connection, $sql)){
-    die("Error:".mysqli_error($connection));
-    }
 
-else{
-    echo "It worked";
-}
+$result = mysqli_query($connection, "SELECT * FROM astronaut");
+print_r($result);
 
-// $result = mysqli_query($connection,$sql); 
+// if(!mysqli_query($connection, $sql)){
+//     die("Error:".mysqli_error($connection));
+//     }
+
+// else{
+//     echo "It worked";
+// }
+
 // echo $result;
 
 
