@@ -8,10 +8,10 @@ $result = mysqli_query($connection,$sql);
 print_r($result);
 if ($result) {
     while ($row = mysqli_fetch_row($result)) {
-        print($row[0]);
-        print($row[1]);
-        print($row[2]);
-        echo "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
+        // print($row[0]);
+        // print($row[1]);
+        // print($row[2]);
+        print "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
 . $row["no_missions"]. "</td></tr>";
     }
 }
