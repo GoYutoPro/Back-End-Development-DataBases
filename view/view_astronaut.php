@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
+</head>
+<body>
+<table>
+<tr>
+<th>Astronaut_ID</th>
+<th>Name</th>
+<th>Number of Missions</th>
+</tr>
+
+</table>
 <?php
 include '../Connection.php';
 
@@ -11,8 +21,8 @@ if ($result) {
         // print($row[0]);
         // print($row[1]);
         // print($row[2]);
-        print "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
-. $row["no_missions"]. "</td></tr>";
+        print "<tr><td>" . $row["0"]. "</td><td>" . $row["1"] . "</td><td>"
+. $row["2"]. "</td></tr>";
     }
 }
 
@@ -39,16 +49,7 @@ if ($result) {
 <head>
 <title>Table with database</title>
 
-</head>
-<body>
-<table>
-<tr>
-<th>Astronaut_ID</th>
-<th>Name</th>
-<th>Number of Missions</th>
-</tr>
 
-</table>
   <a href="../index.php">
        <button> Go Back to the previous Page
    </button></a>
