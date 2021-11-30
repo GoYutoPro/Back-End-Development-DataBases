@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 
   while($row = $result->fetch_assoc()) {
 
-    echo "id: " . $row["astronaut_id"]. " - Name: " . $row["name"]. " " . $row["no_missions"]. "<br>";
+    echo  "<tr><td>""ID Results: " . $row["astronaut_id"]. "</td><td>" " - Name: " . $row["name"]. "</td><td>" " " . $row["no_missions"]. "</td></tr>" "<br>";
 
   }
 
