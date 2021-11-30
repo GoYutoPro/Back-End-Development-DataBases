@@ -17,7 +17,7 @@ include '../Connection.php';
 
 $sql = "SELECT * FROM astronaut";
 $result = mysqli_query($connection,$sql); 
-echo $result;
+echo $result['astronaut_id'];
 // if ($result->num_rows > 0) {
 // while($row = $result->fetch_assoc()) {
 // echo "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
