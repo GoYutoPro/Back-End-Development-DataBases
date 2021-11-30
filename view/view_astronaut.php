@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html>
+<?php
+echo "Hello";
+include '../Connection.php';
+
+$sql = "SELECT * FROM astronaut";
+$result = mysqli_query($connection,$sql); 
+echo $result;
+
+
+// if ($result->num_rows > 0) {
+// while($row = $result->fetch_assoc()) {
+// echo "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
+// . $row["no_missions"]. "</td></tr>";
+//     }
+// } 
+// else { echo "0 results"; }
+?>
+
 <head>
 <title>Table with database</title>
 
@@ -12,20 +30,6 @@
 <th>Number of Missions</th>
 </tr>
 
-<?php
-include '../Connection.php';
-
-$sql = "SELECT * FROM astronaut";
-$result = mysqli_query($connection,$sql); 
-echo $result['astronaut_id'];
-// if ($result->num_rows > 0) {
-// while($row = $result->fetch_assoc()) {
-// echo "<tr><td>" . $row["astronaut_id"]. "</td><td>" . $row["name"] . "</td><td>"
-// . $row["no_missions"]. "</td></tr>";
-//     }
-// } 
-// else { echo "0 results"; }
-?>
 </table>
   <a href="../index.php">
        <button> Go Back to the previous Page
