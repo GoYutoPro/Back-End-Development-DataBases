@@ -1,7 +1,26 @@
 <html>
+<?php
+include '../Validation.php';
+include '../Connection.php';
+
+   if(isset($_POST["button-submit"])){
+      $name = Validation($_POST ["name"]);
+      $no_missions = Validation($_POST ["no_missions"]);
+
+      $sql = "INSERT INTO astronaut (name, no_missions) VALUES ('$name', '$no_missions')";
+
+      if(!mysqli_query($connection, $sql)){
+      die("Error:".mysqli_error($connection));
+      }
+      else{
+        $last_id = $connection->insert_id;
+        echo "<h3>" . " Last inserted ID is: " . $last_id . "</h3>";
+      
+      }     
+      
+    }
+?> 
 <head>
-    <?php include '../Validation.php';?>
-    <?php include '../Connection.php';?>
   <title>Create Astronaut</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +33,7 @@
   <u><h2>Create a Astronaut Table</h2></u>
     <div class="mb-3">
       <label for="text">Astronaut Name</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Enter Astronaut's Name" name="name" required> 
+      <input type="text" class="form-control" id="name" placeholder="Enter Astronaut's Name" name="name" required> 
     </div>
     <div class="mb-3">
       <label for="number">Number of Missions</label>
@@ -25,30 +44,13 @@
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
       </label>
     </div>
-    <button type="submit" id="btn" class="btn btn-primary">Submit</button>
+    <input type="submit" name= "button-submit" class="btn btn-primary"></input>
   </form>
   <br>
 </div>
   <a href="../index.php">
        <button id="back_btn" class="back"> Go Back to the previous Page
    </button></a>
-
-   <?php
-   
-    $astronaut_id = Validation($_POST ["astronaut_id"]);
-    $name = Validation($_POST ["name"]);
-    $no_missions = Validation($_POST ["no_missions"]);
-
-    $sql = "INSERT INTO astronaut (astronaut_id, name, no_missions) VALUES ('$astronaut_id', '$name', '$no_missions')";
-
-    if(!mysqli_query($connection, $sql)){
-    die("Error:".mysqli_error($connection));
-    }
-
-    else{
-    echo "Data Inserted";
-    }
-?>
 </body>
 </html>
 <style>
@@ -88,12 +90,4 @@
     .forms {
         background-color:lightblue;
     }
-
-    
-
-/* <div class="mb-3 mt-3">
-      <label for="number">Astronaut ID</label>
-      <input type="number" class="form-control" id="number" placeholder="Insert Astronaut ID" name="astronaut_id">
-    </div> */
-
-    
+</style>

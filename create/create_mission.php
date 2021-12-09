@@ -1,3 +1,21 @@
+<?php
+include '../Validation.php';
+include '../Connection.php';
+   if(isset($_POST["button-submit"])){
+    $destination = Validation($_POST ["destination"]);
+    $launch_date = Validation($_POST ["launch_date"]);
+    $type = Validation($_POST ["type"]);
+    $crew_size = Validation($_POST ["crew_size"]);
+    $target_id = Validation($_POST ["target_id"]);
+      $sql = "INSERT INTO mission (destination, launch_date, type, crew_size, target_id) VALUES ('$destination', '$launch_date', '$type', '$crew_size', '$target_id')";
+      if(!mysqli_query($connection, $sql)){
+      die("Error:".mysqli_error($connection));
+      }
+      else{
+      echo "Data Inserted";
+      }
+    }
+?> 
 <html>
 <body>
 <title>Create Mission</title>
@@ -7,13 +25,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<form name="form" onsubmit="alert" action="../Connection.php" method="post">
+<form name="form" onsubmit="alert" action="create_mission.php" method="post">
 <div class="container mt-3">
   <u><h2>Create a Mission Table</h2></u>
-    <div class="mb-3">
-    <b> <label for="text">Name</label></b>
-      <input type="text" class="form-control" id="text" placeholder="Name" name="name" required> 
-    </div>
     <div class="mb-3">
       <b><label for="text">Destination</label></b>
       <input type="text" class="form-control" id="destination" placeholder="Enter the destination" name="destination" required>
@@ -31,43 +45,29 @@
       <input type="number" class="form-control" id="crew_size" placeholder="Enter the Crew Size" name="crew_size" required>
     </div>
     <div class="mb-3">
-    <b><label for="number">Target ID</label></b>
-      <input type="number" class="form-control" id="target_id" placeholder="Enter the target ID" name="target_id" required>
-    </div>
+        <label for="type" class="form-label"><b>Target ID:</b></label>
+            <select id="target_id" name="target_id">
+        <?php
+        $result = mysqli_query($connection, "SELECT * FROM targets");
+        foreach ($result as $row ) {
+            $thisValue = $row['target_id'];
+            echo "<option  value= $thisValue >" . $thisValue . "</option>";
+            }  
+            ?>
+            </select>  
+        </div>
     <div class="form-check mb-3">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
       </label>
     </div>
-    <button type="submit" id="btn" class="btn btn-primary">Submit</button>
+    <input type="submit" name= "button-submit" class="btn btn-primary"></input>
   </form>
   <br>
 </div>
   <a href="../index.php">
        <button id="back_btn" class="back"> Go Back to the previous Page
    </button></a>
-    <!-- <table class="table"border="2px">
-    <td><form action="../Connection.php" method="post">
-        astronaut_id: <input type="integer" name="astronaut_id"> 
-
-        name: <input type="text" name="name">
-
-        destination <input type="text" name="destination">
-        
-        launch_date <input type="integer" name="launch_date">
-        
-        type <input type="text" name="type">
-        
-        crew_size <input type="integer" name="crew_size">
-        
-        target_id <input type="integer" name="target_id">
-    <td>
-        <input class="submit"type="submit">
-    </td>
-    </form></td></table>
-   <a href="../index.php">
-       <button class="back"> Go Back to the previous Page
-   </button></a> -->
 </body>
 </html>
 <style>
