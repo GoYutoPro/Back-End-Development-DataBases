@@ -108,7 +108,7 @@ include '../Connection.php';
         width: 100px;
         height: 100px;
     }
-    /* This is the body tab, and this is where the whole form and buttons are at and this adds the text and item alignment to be centre and the background colour to be grey just like the background colour of the website. */
+    /* This is the body tab, and this is where the whole form and buttons are at and this adds the text and item alignment to be centre and the background colour to be grey just like the background colour of the website */
 
     body {
     width:100%;
